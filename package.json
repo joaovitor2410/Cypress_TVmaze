@@ -1,23 +1,31 @@
 {
   "name": "cypress_qa202622",
   "version": "1.0.0",
-  "description": "Projeto scafold de Cypress QA202622",
-  "homepage": "https://github.com/profangelodias/cypress_qa202622#readme",
+  "description": "Automacao E2E do TVmaze com Cypress para a disciplina de QA",
+  "homepage": "https://github.com/joaovitor2410/Cypress_TVmaze#readme",
   "bugs": {
-    "url": "https://github.com/profangelodias/cypress_qa202622/issues"
+    "url": "https://github.com/joaovitor2410/Cypress_TVmaze/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/profangelodias/cypress_qa202622.git"
+    "url": "git+https://github.com/joaovitor2410/Cypress_TVmaze.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/cypress.cjs run --browser chrome",
+    "cy:open": "node scripts/cypress.cjs open --e2e --browser chrome",
+    "test:saucedemo": "node scripts/cypress.cjs run --browser chrome --config-file cypress.saucedemo.config.js --spec \"cypress/e2e/login/logins_validos.cy.js,cypress/e2e/login/logins_invalidos.cy.js\"",
+    "cy:open:letterboxd": "node scripts/cypress.cjs open --e2e --browser chrome --config-file cypress.letterboxd.config.js",
+    "test:letterboxd": "node scripts/cypress.cjs run --browser chrome --config-file cypress.letterboxd.config.js",
+    "test:letterboxd:publico": "node scripts/cypress.cjs run --browser chrome --config-file cypress.letterboxd.config.js --spec \"cypress/e2e/letterboxd/busca/*.cy.js,cypress/e2e/letterboxd/login/logins_invalidos.cy.js\"",
+    "cy:open:tvmaze": "node scripts/cypress.cjs open --e2e --browser chrome --config-file cypress.tvmaze.config.js",
+    "test:tvmaze": "node scripts/cypress.cjs run --browser chrome --config-file cypress.tvmaze.config.js",
+    "test:tvmaze:publico": "node scripts/cypress.cjs run --browser chrome --config-file cypress.tvmaze.config.js --spec \"cypress/e2e/tvmaze/busca/*.cy.js,cypress/e2e/tvmaze/login/logins_invalidos.cy.js,cypress/e2e/tvmaze/acompanhamento/acompanhamento_sem_login.cy.js\""
   },
   "devDependencies": {
-    "cypress": "^16.2.0"
+    "cypress": "16.3.0"
   }
 }
